@@ -9,15 +9,21 @@ Color Intentions
 }
 
 .input {
-  --text_input_background_color: $gray;
   --text_input_outline_color: none;
   --text_input_font_color: $very_dark_cyan;
   --radio_label_background_color: $very_dark_cyan;
   --radio_label_font_color: $white;
 }
-.input__form__text-input__label {
+.input__form__text-input {
+  --text_input_background_color: $gray;
+}
+.input__form__text-input-label {
   --label_font_color: $dark_grayish_cyan_darker;
 }
+.input__form__radio-input__label {
+  --label_font_color: $white;
+}
+
 .output {
   --background_color: $very_dark_cyan;
 }

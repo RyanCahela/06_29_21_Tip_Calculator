@@ -27,20 +27,21 @@ Color Intentions
   //labels
   &__form {
     &__text-input {
-      &__label {
-        --label_font_color: $dark_grayish_cyan_darker;
-      }
+      --text_input_background_color: $gray;
+    }
+
+    &__text-input-label {
+      --label_font_color: $dark_grayish_cyan_darker;
     }
 
     &__radio-input {
       &__label {
-
+        --label_font_color: $white;
       }
     }
   }
 
   //text inputs
-  --text_input_background_color: $gray;
   --text_input_outline_color: none;
   --text_input_font_color: $very_dark_cyan;
 
