@@ -1,0 +1,47 @@
+/*************************************
+COLORS
+**************************************/
+/*************************************
+Color Intentions
+**************************************/
+.container {
+  --container-background: $white;
+}
+
+.input {
+  --text_input_background_color: $gray;
+  --text_input_outline_color: none;
+  --text_input_font_color: $very_dark_cyan;
+  --radio_label_background_color: $very_dark_cyan;
+  --radio_label_font_color: $white;
+}
+.input__form__text-input__label {
+  --label_font_color: $dark_grayish_cyan_darker;
+}
+.output {
+  --background_color: $very_dark_cyan;
+}
+.output__amount {
+  --font_color: $strong_cyan;
+}
+.output__heading {
+  --font_color: $white;
+}
+.output__heading__subheading {
+  --font_color: $dark_grayish_cyan_lighter;
+}
+.output__reset-form {
+  --font-color: $very_dark_cyan;
+}
+
+/*************************************
+Fonts
+**************************************/
+/*************************************
+Fonts
+**************************************/
+body {
+  background-color: steelblue;
+}
+
+/*# sourceMappingURL=/sass.0a7c4b30.css.map */

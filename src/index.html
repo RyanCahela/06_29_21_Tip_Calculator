@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
+    />
+    <link rel="stylesheet" href="sass/index.scss" />
+
+    <title>06_29_21_Tip_Calculator</title>
+  </head>
+  <body>
+    <h1 class="main-heading">Splitter</h1>
+    <div class="container">
+      <section class="input">
+        <form class="input__form">
+          <fieldset name="bill_amount" class="input__form__bill-amount">
+            <label class="input__form__text-input__label" for="bill_amount"
+              >Bill</label
+            >
+            <input type="text" name="bill_amount" id="bill_amount" />
+          </fieldset>
+          <fieldset name="tip_amount">
+            <label for="tip_amount">Select Tip %</label>
+            <label class="input__form__radio-input__label" for="five_percent"
+              >5%</label
+            >
+            <input type="radio" name="tip_amount" id="five_percent" value="5" />
+            <label class="input__form__radio-input__label" for="ten_percent"
+              >10%</label
+            >
+            <input type="radio" name="tip_amount" id="ten_percent" value="10" />
+            <label class="input__form__radio-input__label" for="fifteen_percent"
+              >15%</label
+            >
+            <input
+              class="input__form__radio-input__label"
+              type="radio"
+              name="tip_amount"
+              id="fifteen_percent"
+              value="15"
+            />
+            <label for="twenty_five_percent">25%</label>
+            <input
+              class="input__form__radio-input__label"
+              type="radio"
+              name="tip_amount"
+              id="twenty_five_percent"
+              value="25"
+            />
+            <label class="input__form__radio-input__label" for="fifty_percent"
+              >50%</label
+            >
+            <input type="radio" name="tip_amount" id="fifty_percent" />
+            <label for="custom_percent">Custom</label>
+            <input type="radio" name="tip_amount" id="custom_percent" />
+          </fieldset>
+          <fieldset name="number_of_people">
+            <label class="input__form__text-input__label" for="number_of_people"
+              >Number of People</label
+            >
+            <input type="text" id="number_of_people" placeholder="0" />
+          </fieldset>
+        </form>
+      </section>
+      <section class="output">
+        <h2 class="output__heading">
+          Tip Amount<span class="output__heading__subheading">/ person</span>
+        </h2>
+        <span class="output__amount">$0.00</span>
+        <h2 class="output__heading">
+          Total<span class="output__heading__subheading">/ person</span>
+        </h2>
+        <span class="output__amount">$0.00</span>
+        <button class="output__reset-form">Reset</button>
+      </section>
+    </div>
+  </body>
+</html>

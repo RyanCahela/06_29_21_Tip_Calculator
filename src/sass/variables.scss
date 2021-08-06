@@ -1,0 +1,83 @@
+/*************************************
+COLORS
+**************************************/
+//primary
+$strong_cyan: hsl(172, 67%, 45%);
+
+//neutral
+$very_dark_cyan: hsl(183, 100%, 15%);
+$dark_grayish_cyan_darker: hsl(186, 14%, 43%);
+$dark_grayish_cyan_lighter: hsl(184, 14%, 56%);
+$light_grayish_cyan_darker: hsl(185, 41%, 84%);
+$light_grayish_cyan_lighter: hsl(189, 41%, 97%);
+$white: hsl(0, 0%, 100%);
+$gray: hsl(0, 0%, 59%);
+
+//accent
+$orange: hsl(13, 70%, 61%);
+
+/*************************************
+Color Intentions
+**************************************/
+.container {
+  --container-background: $white;
+}
+
+.input {
+  //labels
+  &__form {
+    &__text-input {
+      &__label {
+        --label_font_color: $dark_grayish_cyan_darker;
+      }
+    }
+
+    &__radio-input {
+      &__label {
+
+      }
+    }
+  }
+
+  //text inputs
+  --text_input_background_color: $gray;
+  --text_input_outline_color: none;
+  --text_input_font_color: $very_dark_cyan;
+
+  //radio inputs
+  --radio_label_background_color: $very_dark_cyan;
+  --radio_label_font_color: $white;
+}
+
+.output {
+  --background_color: $very_dark_cyan;
+  &__amount {
+    --font_color: $strong_cyan;
+  }
+
+  &__heading {
+    --font_color: $white;
+  }
+
+  &__heading__subheading {
+    --font_color: $dark_grayish_cyan_lighter;
+  }
+
+  &__reset-form {
+    --font-color: $very_dark_cyan;
+  }
+}
+
+/*************************************
+Fonts
+**************************************/
+
+.input__form {
+  //labels
+}
+
+/*************************************
+Fonts
+**************************************/
+
+$background_color: steelblue;
