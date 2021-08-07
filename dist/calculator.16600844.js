@@ -118,8 +118,6 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"js/calculator.js":[function(require,module,exports) {
-function _readOnlyError(name) { throw new TypeError("\"" + name + "\" is read-only"); }
-
 (function Calculator() {
   //amount = cash money
   //percent = value from DOM * 0.01;
@@ -128,56 +126,40 @@ function _readOnlyError(name) { throw new TypeError("\"" + name + "\" is read-on
   });
 
   function calculate() {
+    //cache input elements
     var bill_amount_input = document.querySelector(".js_bill_amount_input");
     var tip_percentage_radio_buttons = document.querySelectorAll("[name=\"tip_amount\"]");
-    var number_of_people_input = document.querySelector(".js_number_of_people_input");
+    var number_of_people_input = document.querySelector(".js_number_of_people_input"); //cach output elements
+
+    var tip_amount_per_person_element = document.querySelector(".js_tip_amount_per_person");
+    var total_amount_per_person_element = document.querySelector(".js_total_amount_per_person"); //grab data from elements
+
     var bill_amount = getBillAmountValue(bill_amount_input);
     var tip_percentage = getTipPercentageValue(tip_percentage_radio_buttons);
     var number_of_people = getNumberOfPeopleValue(number_of_people_input);
     console.log("bill_amount", bill_amount);
     console.log("tip_percentage", tip_percentage);
-    console.log("number_of_people", number_of_people); //helper functions
+    console.log("number_of_people", number_of_people); //do math
+
+    var tip_amount = bill_amount * tip_percentage;
+    var tip_amount_per_person = tip_amount / number_of_people;
+    var total_amount_with_tip = bill_amount + tip_amount;
+    var total_amount_per_person = total_amount_with_tip / number_of_people; //update Dom
+
+    tip_amount_per_person_element.textContent = tip_amount_per_person.toFixed(2);
+    total_amount_per_person_element.textContent = total_amount_per_person; //helper functions
 
     function getBillAmountValue(bill_amount_input) {
-      console.log("bill_amount_input", bill_amount_input);
       return Number(bill_amount_input.value);
     }
 
     function getTipPercentageValue(tip_percentage_radio_buttons) {
-      console.log("tip_percentage_radio_buttons", tip_percentage_radio_buttons);
-      var radio_buttons = Array.from(tip_percentage_radio_buttons);
-      var checked_radio_id = radio_buttons.filter(function (e) {
-        console.dir("radio e", e);
+      var checked_radio_button_value = null;
+      tip_percentage_radio_buttons.forEach(function (radio_button) {
+        if (!radio_button.checked) return;
+        checked_radio_button_value = radio_button.value;
       });
-      console.log(checked_radio_id);
-      var percent_value = 0;
-
-      switch (checked_radio_id) {
-        case "five_percent":
-          0.05, _readOnlyError("percent_value");
-          break;
-
-        case "ten_percent":
-          0.1, _readOnlyError("percent_value");
-          break;
-
-        case "fifteen_percent":
-          0.15, _readOnlyError("percent_value");
-          break;
-
-        case "twenty_five_percent":
-          0.25, _readOnlyError("percent_value");
-          break;
-
-        case "fifty_percent":
-          0.5, _readOnlyError("percent_value");
-          break;
-
-        default:
-          console.error("checked_radio_id value was ".concat(checked_radio_id));
-      }
-
-      return percent_value;
+      return checked_radio_button_value * 0.01;
     }
 
     function getNumberOfPeopleValue(number_of_people_input) {
@@ -213,7 +195,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58102" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63148" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -80,6 +80,7 @@
               type="radio"
               name="tip_amount"
               id="fifty_percent"
+              value="50"
             />
             <label for="custom_percent">Custom</label>
             <input type="radio" name="tip_amount" id="custom_percent" />
@@ -101,11 +102,11 @@
         <h2 class="output__heading">
           Tip Amount<span class="output__heading__subheading">/ person</span>
         </h2>
-        <span class="output__amount">$0.00</span>
+        <span class="output__amount js_tip_amount_per_person">$0.00</span>
         <h2 class="output__heading">
           Total<span class="output__heading__subheading">/ person</span>
         </h2>
-        <span class="output__amount">$0.00</span>
+        <span class="output__amount js_total_amount_per_person">$0.00</span>
         <button class="output__reset-form">Reset</button>
       </section>
     </div>
