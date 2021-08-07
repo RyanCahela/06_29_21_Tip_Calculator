@@ -117,79 +117,75 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
-var bundleURL = null;
+})({"js/calculator.js":[function(require,module,exports) {
+function _readOnlyError(name) { throw new TypeError("\"" + name + "\" is read-only"); }
 
-function getBundleURLCached() {
-  if (!bundleURL) {
-    bundleURL = getBundleURL();
-  }
+(function Calculator() {
+  //amount = cash money
+  //percent = value from DOM * 0.01;
+  document.querySelector(".container").addEventListener("change", function (e) {
+    calculate();
+  });
 
-  return bundleURL;
-}
+  function calculate() {
+    var bill_amount_input = document.querySelector(".js_bill_amount_input");
+    var tip_percentage_radio_buttons = document.querySelectorAll("[name=\"tip_amount\"]");
+    var number_of_people_input = document.querySelector(".js_number_of_people_input");
+    var bill_amount = getBillAmountValue(bill_amount_input);
+    var tip_percentage = getTipPercentageValue(tip_percentage_radio_buttons);
+    var number_of_people = getNumberOfPeopleValue(number_of_people_input);
+    console.log("bill_amount", bill_amount);
+    console.log("tip_percentage", tip_percentage);
+    console.log("number_of_people", number_of_people); //helper functions
 
-function getBundleURL() {
-  // Attempt to find the URL of the current script and use that as the base URL
-  try {
-    throw new Error();
-  } catch (err) {
-    var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
-
-    if (matches) {
-      return getBaseURL(matches[0]);
+    function getBillAmountValue(bill_amount_input) {
+      console.log("bill_amount_input", bill_amount_input);
+      return Number(bill_amount_input.value);
     }
-  }
 
-  return '/';
-}
+    function getTipPercentageValue(tip_percentage_radio_buttons) {
+      console.log("tip_percentage_radio_buttons", tip_percentage_radio_buttons);
+      var radio_buttons = Array.from(tip_percentage_radio_buttons);
+      var checked_radio_id = radio_buttons.filter(function (e) {
+        console.dir("radio e", e);
+      });
+      console.log(checked_radio_id);
+      var percent_value = 0;
 
-function getBaseURL(url) {
-  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)?\/[^/]+(?:\?.*)?$/, '$1') + '/';
-}
+      switch (checked_radio_id) {
+        case "five_percent":
+          0.05, _readOnlyError("percent_value");
+          break;
 
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-},{}],"../node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
-var bundle = require('./bundle-url');
+        case "ten_percent":
+          0.1, _readOnlyError("percent_value");
+          break;
 
-function updateLink(link) {
-  var newLink = link.cloneNode();
+        case "fifteen_percent":
+          0.15, _readOnlyError("percent_value");
+          break;
 
-  newLink.onload = function () {
-    link.remove();
-  };
+        case "twenty_five_percent":
+          0.25, _readOnlyError("percent_value");
+          break;
 
-  newLink.href = link.href.split('?')[0] + '?' + Date.now();
-  link.parentNode.insertBefore(newLink, link.nextSibling);
-}
+        case "fifty_percent":
+          0.5, _readOnlyError("percent_value");
+          break;
 
-var cssTimeout = null;
-
-function reloadCSS() {
-  if (cssTimeout) {
-    return;
-  }
-
-  cssTimeout = setTimeout(function () {
-    var links = document.querySelectorAll('link[rel="stylesheet"]');
-
-    for (var i = 0; i < links.length; i++) {
-      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
-        updateLink(links[i]);
+        default:
+          console.error("checked_radio_id value was ".concat(checked_radio_id));
       }
+
+      return percent_value;
     }
 
-    cssTimeout = null;
-  }, 50);
-}
-
-module.exports = reloadCSS;
-},{"./bundle-url":"../node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"sass/index.scss":[function(require,module,exports) {
-var reloadCSS = require('_css_loader');
-
-module.hot.dispose(reloadCSS);
-module.hot.accept(reloadCSS);
-},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+    function getNumberOfPeopleValue(number_of_people_input) {
+      return Number(number_of_people_input.value);
+    }
+  }
+})();
+},{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -393,5 +389,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js"], null)
-//# sourceMappingURL=/sass.0a7c4b30.js.map
+},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/calculator.js"], null)
+//# sourceMappingURL=/calculator.16600844.js.map
