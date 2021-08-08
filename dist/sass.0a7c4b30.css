@@ -9,7 +9,7 @@ COLORS
   --light_grayish_cyan_darker: hsl(185, 41%, 84%);
   --light_grayish_cyan_lighter: hsl(189, 41%, 97%);
   --white: hsl(0, 0%, 100%);
-  --grey: hsl(0, 0%, 59%);
+  --light_grey: hsl(185, 38%, 97%);
   --orange: hsl(13, 70%, 61%);
 }
 
@@ -27,7 +27,8 @@ Color Intentions
   --radio_label_font_color: var(--white);
 }
 .input__form__text-input {
-  --background_color: var(--gray);
+  --background_color: var(--light_grey);
+  --color: var(--very_dark_cyan);
 }
 .input__form__text-input-label, .input__form__tip-amount-label {
   --color: var(--dark_grayish_cyan_darker);
@@ -77,6 +78,7 @@ Fonts
 
 .input__form__text-input {
   background-color: var(--background_color);
+  color: var(--color);
   border: none;
 }
 .input__form__text-input-label, .input__form__tip-amount-label {

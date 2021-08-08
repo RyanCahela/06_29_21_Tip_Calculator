@@ -12,7 +12,7 @@ COLORS
   --light_grayish_cyan_darker: hsl(185, 41%, 84%);
   --light_grayish_cyan_lighter: hsl(189, 41%, 97%);
   --white: hsl(0, 0%, 100%);
-  --grey: hsl(0, 0%, 59%);
+  --light_grey: hsl(185, 38%, 97%);
 
   //accent
   --orange: hsl(13, 70%, 61%);
@@ -29,7 +29,8 @@ Color Intentions
   //labels
   &__form {
     &__text-input {
-      --background_color: var(--gray);
+      --background_color: var(--light_grey);
+      --color: var(--very_dark_cyan);
     }
 
     &__text-input-label,
