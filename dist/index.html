@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
     <link rel="stylesheet" href="/sass.0a7c4b30.css">
 
@@ -15,21 +18,26 @@
       <section class="input">
         <form class="input__form">
           <fieldset name="bill_amount" class="input__form__bill-amount">
-            <label class="input__form__text-input__label" for="bill_amount">Bill</label>
-            <input type="text" name="bill_amount" id="bill_amount" class="js_bill_amount_input">
+            <label class="input__form__text-input-label" for="bill_amount">Bill</label>
+            <input type="text" name="bill_amount" id="bill_amount" class="input__form__text-input js_bill_amount_input">
           </fieldset>
           <fieldset name="tip_amount">
-            <label for="tip_amount">Select Tip %</label>
-            <label class="input__form__radio-input-label" for="five_percent">5%</label>
+            <!--
+              The order of labels and inputs here is important for css selection.
+              Any label with a :checked input preceding it will have a differnt 
+              background color to signifiy selection.
+            -->
+            <label class="input__form__tip-amount-label" for="tip_amount">Select Tip %</label>
             <input class="input__form__radio-input" type="radio" name="tip_amount" id="five_percent" value="5">
-            <label class="input__form__radio-input-label" for="ten_percent">10%</label>
+            <label class="input__form__radio-input-label" for="five_percent">5%</label>
             <input class="input__form__radio-input" type="radio" name="tip_amount" id="ten_percent" value="10">
-            <label class="input__form__radio-input-label" for="fifteen_percent">15%</label>
+            <label class="input__form__radio-input-label" for="ten_percent">10%</label>
             <input class="input__form__radio-input" type="radio" name="tip_amount" id="fifteen_percent" value="15">
-            <label class="input__form__radio-input-label" for="twenty_five_percent">25%</label>
+            <label class="input__form__radio-input-label" for="fifteen_percent">15%</label>
             <input class="input__form__radio-input" type="radio" name="tip_amount" id="twenty_five_percent" value="25">
-            <label class="input__form__radio-input__label" for="fifty_percent">50%</label>
+            <label class="input__form__radio-input-label" for="twenty_five_percent">25%</label>
             <input class="input__form__radio-input" type="radio" name="tip_amount" id="fifty_percent" value="50">
+            <label class="input__form__radio-input-label" for="fifty_percent">50%</label>
             <label for="custom_percent">Custom</label>
             <input type="radio" name="tip_amount" id="custom_percent">
           </fieldset>

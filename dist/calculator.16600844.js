@@ -117,65 +117,75 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"js/calculator.js":[function(require,module,exports) {
-(function Calculator() {
-  //amount = cash money
-  //percent = value from DOM * 0.01;
-  var container_el = document.querySelector(".container");
-  container_el.addEventListener("change", function () {
-    return calculate();
+})({"js/helper_functions.js":[function(require,module,exports) {
+//helper functions
+function getBillAmountValue(bill_amount_input) {
+  return Number(bill_amount_input.value);
+}
+
+function getTipPercentageValue(tip_percentage_radio_buttons) {
+  var checked_radio_button_value = null;
+  tip_percentage_radio_buttons.forEach(function (radio_button) {
+    if (!radio_button.checked) return;
+    checked_radio_button_value = radio_button.value;
   });
-  container_el.addEventListener("submit", function (e) {
-    e.preventDefault();
-    calculate();
-  });
-  container_el.addEventListener("keyup", function () {
-    return calculate();
-  });
+  return checked_radio_button_value * 0.01;
+}
 
-  function calculate() {
-    //cache input elements
-    var bill_amount_input = document.querySelector(".js_bill_amount_input");
-    var tip_percentage_radio_buttons = document.querySelectorAll("[name=\"tip_amount\"]");
-    var number_of_people_input = document.querySelector(".js_number_of_people_input"); //cach output elements
+function getNumberOfPeopleValue(number_of_people_input) {
+  return Number(number_of_people_input.value);
+}
 
-    var tip_amount_per_person_element = document.querySelector(".js_tip_amount_per_person");
-    var total_amount_per_person_element = document.querySelector(".js_total_amount_per_person"); //grab data from elements
+module.exports = {
+  getBillAmountValue: getBillAmountValue,
+  getTipPercentageValue: getTipPercentageValue,
+  getNumberOfPeopleValue: getNumberOfPeopleValue
+};
+},{}],"js/calculator.js":[function(require,module,exports) {
+var _require = require("./helper_functions"),
+    getBillAmountValue = _require.getBillAmountValue,
+    getTipPercentageValue = _require.getTipPercentageValue,
+    getNumberOfPeopleValue = _require.getNumberOfPeopleValue; //amount = cash money
+//percent = value from DOM * 0.01;
 
-    var bill_amount = getBillAmountValue(bill_amount_input);
-    var tip_percentage = getTipPercentageValue(tip_percentage_radio_buttons);
-    var number_of_people = getNumberOfPeopleValue(number_of_people_input);
-    console.log("bill_amount", bill_amount);
-    console.log("tip_percentage", tip_percentage);
-    console.log("number_of_people", number_of_people); //do math
 
-    var tip_amount = bill_amount * tip_percentage;
-    var tip_amount_per_person = tip_amount / number_of_people;
-    var total_amount_with_tip = bill_amount + tip_amount;
-    var total_amount_per_person = total_amount_with_tip / number_of_people; //update Dom
+var container_el = document.querySelector(".container");
+container_el.addEventListener("change", function () {
+  return calculate();
+});
+container_el.addEventListener("submit", function (e) {
+  e.preventDefault();
+  calculate();
+});
+container_el.addEventListener("keyup", function () {
+  return calculate();
+});
 
-    tip_amount_per_person_element.textContent = tip_amount_per_person.toFixed(2);
-    total_amount_per_person_element.textContent = total_amount_per_person.toFixed(2); //helper functions
+function calculate() {
+  //cache input elements
+  var bill_amount_input = document.querySelector(".js_bill_amount_input");
+  var tip_percentage_radio_buttons = document.querySelectorAll("[name=\"tip_amount\"]");
+  var number_of_people_input = document.querySelector(".js_number_of_people_input"); //cach output elements
 
-    function getBillAmountValue(bill_amount_input) {
-      return Number(bill_amount_input.value);
-    }
+  var tip_amount_per_person_element = document.querySelector(".js_tip_amount_per_person");
+  var total_amount_per_person_element = document.querySelector(".js_total_amount_per_person"); //grab data from elements
 
-    function getTipPercentageValue(tip_percentage_radio_buttons) {
-      var checked_radio_button_value = null;
-      tip_percentage_radio_buttons.forEach(function (radio_button) {
-        if (!radio_button.checked) return;
-        checked_radio_button_value = radio_button.value;
-      });
-      return checked_radio_button_value * 0.01;
-    }
+  var bill_amount = getBillAmountValue(bill_amount_input);
+  var tip_percentage = getTipPercentageValue(tip_percentage_radio_buttons);
+  var number_of_people = getNumberOfPeopleValue(number_of_people_input);
+  console.log("bill_amount", bill_amount);
+  console.log("tip_percentage", tip_percentage);
+  console.log("number_of_people", number_of_people); //do math
 
-    function getNumberOfPeopleValue(number_of_people_input) {
-      return Number(number_of_people_input.value);
-    }
-  }
-})();
-},{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+  var tip_amount = bill_amount * tip_percentage;
+  var tip_amount_per_person = tip_amount / number_of_people;
+  var total_amount_with_tip = bill_amount + tip_amount;
+  var total_amount_per_person = total_amount_with_tip / number_of_people; //update Dom
+
+  tip_amount_per_person_element.textContent = tip_amount_per_person.toFixed(2);
+  total_amount_per_person_element.textContent = total_amount_per_person.toFixed(2);
+}
+},{"./helper_functions":"js/helper_functions.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -203,7 +213,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63561" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52098" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

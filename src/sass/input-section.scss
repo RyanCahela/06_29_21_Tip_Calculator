@@ -1,0 +1,28 @@
+.input {
+  &__form {
+    //text input section
+    &__text-input {
+      background-color: var(--background_color);
+      border: none;
+    }
+
+    &__text-input-label,
+    &__tip-amount-label {
+      color: var(--color);
+    }
+
+    //radio input section
+    &__radio-input {
+      display: none;
+    }
+
+    &__radio-input-label {
+      color: var(--label_font_color);
+      background-color: var(--background_color);
+    }
+
+    &__radio-input-label:hover {
+      cursor: pointer;
+    }
+  }
+}

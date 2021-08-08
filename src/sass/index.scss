@@ -1,6 +1,11 @@
 @import "./variables";
 @import "./layout";
+@import "./input-section.scss";
 
 body {
-  background-color: $background_color;
+  font-family: "Space Mono", monospace;
+}
+
+fieldset {
+  border: none;
 }

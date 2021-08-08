@@ -1,48 +1,72 @@
 /*************************************
 COLORS
 **************************************/
+:root {
+  --strong_cyan: hsl(172, 67%, 45%);
+  --very_dark_cyan: hsl(183, 100%, 15%);
+  --dark_grayish_cyan_darker: hsl(186, 14%, 43%);
+  --dark_grayish_cyan_lighter: hsl(184, 14%, 56%);
+  --light_grayish_cyan_darker: hsl(185, 41%, 84%);
+  --light_grayish_cyan_lighter: hsl(189, 41%, 97%);
+  --white: hsl(0, 0%, 100%);
+  --grey: hsl(0, 0%, 59%);
+  --orange: hsl(13, 70%, 61%);
+}
+
 /*************************************
 Color Intentions
 **************************************/
 .container {
-  --container-background: $white;
+  --background_color: var(--white);
 }
 
 .input {
   --text_input_outline_color: none;
-  --text_input_font_color: $very_dark_cyan;
-  --radio_label_background_color: $very_dark_cyan;
-  --radio_label_font_color: $white;
+  --text_input_font_color: var(--very_dark_cyan);
+  --radio_label_background_color: var(--very_dark_cyan);
+  --radio_label_font_color: var(--white);
 }
 .input__form__text-input {
-  --text_input_background_color: $gray;
+  --background_color: var(--gray);
 }
-.input__form__text-input-label {
-  --label_font_color: $dark_grayish_cyan_darker;
+.input__form__text-input-label, .input__form__tip-amount-label {
+  --color: var(--dark_grayish_cyan_darker);
 }
-.input__form__radio-input__label {
-  --label_font_color: $white;
+.input__form__radio-input-label {
+  --label_font_color: var(--white);
+  --background_color: var(--very_dark_cyan);
+}
+.input__form__radio-input:checked + .input__form__radio-input-label {
+  --background_color: var(--strong_cyan);
 }
 
 .output {
-  --background_color: $very_dark_cyan;
+  --background_color: var(--very_dark_cyan);
 }
 .output__amount {
-  --font_color: $strong_cyan;
+  --font_color: var(--strong_cyan);
 }
 .output__heading {
-  --font_color: $white;
+  --font_color: var(--white);
 }
 .output__heading__subheading {
-  --font_color: $dark_grayish_cyan_lighter;
+  --font_color: var(--dark_grayish_cyan_lighter);
 }
 .output__reset-form {
-  --font-color: $very_dark_cyan;
+  --font_color: var(--very_dark_cyan);
 }
 
 /*************************************
 Fonts
 **************************************/
+.input__form__text-input-label {
+  --font_size: 16px;
+  --font_weight: 700;
+}
+.input__form__text-input {
+  --font_size: 24px;
+  --font_weight: 700;
+}
 /*************************************
 Fonts
 **************************************/
@@ -51,8 +75,30 @@ Fonts
   flex-direction: column;
 }
 
+.input__form__text-input {
+  background-color: var(--background_color);
+  border: none;
+}
+.input__form__text-input-label, .input__form__tip-amount-label {
+  color: var(--color);
+}
+.input__form__radio-input {
+  display: none;
+}
+.input__form__radio-input-label {
+  color: var(--label_font_color);
+  background-color: var(--background_color);
+}
+.input__form__radio-input-label:hover {
+  cursor: pointer;
+}
+
 body {
-  background-color: steelblue;
+  font-family: "Space Mono", monospace;
+}
+
+fieldset {
+  border: none;
 }
 
 /*# sourceMappingURL=/sass.0a7c4b30.css.map */
