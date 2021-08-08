@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "parcel ./src/index.html",
-    "build": "parcel build ./src/index.html"
+    "build": "parcel build ./src/index.html",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,7 @@
   "homepage": "https://github.com/RyanCahela/06_29_21_Tip_Calculator#readme",
   "dependencies": {},
   "devDependencies": {
+    "jest": "^27.0.6",
     "parcel-bundler": "^1.12.5",
     "sass": "^1.37.5"
   }

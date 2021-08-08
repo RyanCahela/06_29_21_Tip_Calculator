@@ -121,8 +121,16 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 (function Calculator() {
   //amount = cash money
   //percent = value from DOM * 0.01;
-  document.querySelector(".container").addEventListener("change", function (e) {
+  var container_el = document.querySelector(".container");
+  container_el.addEventListener("change", function () {
+    return calculate();
+  });
+  container_el.addEventListener("submit", function (e) {
+    e.preventDefault();
     calculate();
+  });
+  container_el.addEventListener("keyup", function () {
+    return calculate();
   });
 
   function calculate() {
@@ -147,7 +155,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
     var total_amount_per_person = total_amount_with_tip / number_of_people; //update Dom
 
     tip_amount_per_person_element.textContent = tip_amount_per_person.toFixed(2);
-    total_amount_per_person_element.textContent = total_amount_per_person; //helper functions
+    total_amount_per_person_element.textContent = total_amount_per_person.toFixed(2); //helper functions
 
     function getBillAmountValue(bill_amount_input) {
       return Number(bill_amount_input.value);
@@ -195,7 +203,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63148" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63561" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
