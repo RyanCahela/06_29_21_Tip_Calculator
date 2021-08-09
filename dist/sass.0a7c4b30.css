@@ -4,10 +4,10 @@ COLORS
 :root {
   --strong_cyan: hsl(172, 67%, 45%);
   --very_dark_cyan: hsl(183, 100%, 15%);
-  --dark_grayish_cyan_darker: hsl(186, 14%, 43%);
-  --dark_grayish_cyan_lighter: hsl(184, 14%, 56%);
-  --light_grayish_cyan_darker: hsl(185, 41%, 84%);
-  --light_grayish_cyan_lighter: hsl(189, 41%, 97%);
+  --dark_greyish_cyan_darker: hsl(186, 14%, 43%);
+  --dark_greyish_cyan_lighter: hsl(184, 14%, 56%);
+  --light_greyish_cyan_darker: hsl(185, 41%, 84%);
+  --light_greyish_cyan_lighter: hsl(189, 41%, 97%);
   --white: hsl(0, 0%, 100%);
   --light_grey: hsl(185, 38%, 97%);
   --orange: hsl(13, 70%, 61%);
@@ -31,7 +31,7 @@ Color Intentions
   --color: var(--very_dark_cyan);
 }
 .input__form__text-input-label, .input__form__tip-amount-label {
-  --color: var(--dark_grayish_cyan_darker);
+  --color: var(--dark_greyish_cyan_darker);
 }
 .input__form__radio-input-label {
   --label_font_color: var(--white);
@@ -51,7 +51,7 @@ Color Intentions
   --font_color: var(--white);
 }
 .output__heading__subheading {
-  --font_color: var(--dark_grayish_cyan_lighter);
+  --font_color: var(--dark_greyish_cyan_lighter);
 }
 .output__reset-form {
   --font_color: var(--very_dark_cyan);
@@ -76,13 +76,38 @@ Fonts
   flex-direction: column;
 }
 
+[name=bill_amount_fieldset] {
+  display: flex;
+  flex-direction: column;
+}
+
+[name=tip_amount_fieldset] {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.input__form__radio-input-label {
+  flex-basis: 25%;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 5px;
+}
+
 .input__form__text-input {
   background-color: var(--background_color);
   color: var(--color);
   border: none;
+  font-size: 24px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 19px;
+  padding-right: 19px;
 }
 .input__form__text-input-label, .input__form__tip-amount-label {
   color: var(--color);
+  font-weight: 700;
+  font-size: 16px;
 }
 .input__form__radio-input {
   display: none;
@@ -97,10 +122,18 @@ Fonts
 
 body {
   font-family: "Space Mono", monospace;
+  background-color: var(--light_greyish_cyan_darker);
 }
 
 fieldset {
   border: none;
+  padding: 0;
+}
+
+.container {
+  background-color: var(--white);
+  border-radius: 25px;
+  padding: 32px;
 }
 
 /*# sourceMappingURL=/sass.0a7c4b30.css.map */
