@@ -82,12 +82,18 @@ Fonts
 }
 
 [name=tip_amount_fieldset] {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
 }
 
+.input__form {
+  margin: -16px;
+}
+.input__form__tip-amount-label {
+  grid-column: 1/3;
+}
 .input__form__radio-input-label {
-  flex-basis: 25%;
   text-align: center;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -99,10 +105,10 @@ Fonts
   color: var(--color);
   border: none;
   font-size: 24px;
-  padding-top: 16px;
-  padding-bottom: 16px;
-  padding-left: 19px;
-  padding-right: 19px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 .input__form__text-input-label, .input__form__tip-amount-label {
   color: var(--color);

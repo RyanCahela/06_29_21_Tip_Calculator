@@ -9,14 +9,18 @@
 }
 
 [name="tip_amount_fieldset"] {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
 }
 
 .input {
   &__form {
+    margin: -16px;
+    &__tip-amount-label {
+      grid-column: 1 / 3;
+    }
     &__radio-input-label {
-      flex-basis: 25%;
       text-align: center;
       padding-top: 10px;
       padding-bottom: 10px;
