@@ -40,6 +40,29 @@ label {
   margin-bottom: 0;
 }
 
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+
+/* Sections */
+.tip_amount_fieldset {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.tip_amount_fieldset label {
+  /* label buttons */
+  flex: 1 0 7.25rem;
+  padding: 1rem 3rem;
+  text-align: center;
+}
+
+.output_section {
+  width: 100%;
+}
+
 /* Untility Classes */
 .container {
   --bg-color: var(--white);
@@ -48,7 +71,7 @@ label {
 }
 
 .dark-bg {
-  --bg-color: var(--very-dark-cyan);
+  background-color: var(--very-dark-cyan);
   color: var(--white);
 }
 
@@ -68,9 +91,20 @@ label {
 }
 
 .center {
+  box-sizing: content-box;
   max-width: 57.5rem;
   margin-left: auto;
   margin-right: auto;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.hide {
+  display: none;
 }
 
 

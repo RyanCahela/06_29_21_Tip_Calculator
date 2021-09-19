@@ -21,40 +21,36 @@
             <label for="bill_amount">Bill</label>
             <input type="text" name="bill_amount" id="bill_amount">
           </fieldset>
-          <fieldset name="tip_amount_fieldset">
+          <fieldset name="tip_amount_fieldset" class="tip_amount_fieldset">
             <!--
-              The order of labels and inputs here is important for css selection.
+              The order of labels and inputs is important for css selection.
               Any label with a :checked input preceding it will have a differnt 
               background color to signifiy selection.
             -->
-            <label for="tip_amount">Select Tip %</label>
-            <input type="radio" name="tip_amount" id="five_percent" value="5">
-            <label for="five_percent">5%</label>
-            <input type="radio" name="tip_amount" id="ten_percent" value="10">
-            <label for="ten_percent">10%</label>
-            <input type="radio" name="tip_amount" id="fifteen_percent" value="15">
-            <label class="input__form__radio-input-label" for="fifteen_percent">15%</label>
-            <input class="input__form__radio-input" type="radio" name="tip_amount" id="twenty_five_percent" value="25">
-            <label class="input__form__radio-input-label" for="twenty_five_percent">25%</label>
-            <input type="radio" name="tip_amount" id="fifty_percent" value="50">
-            <label form__radio-input-label"="" for="fifty_percent">50%</label>
+            <legend for="tip_amount">Select Tip %</legend>
+            <input class="hide" type="radio" name="tip_amount" id="five_percent" value="5">
+            <label class="dark-bg" for="five_percent">5%</label>
+            <input class="hide" type="radio" name="tip_amount" id="ten_percent" value="10">
+            <label class="dark-bg" for="ten_percent">10%</label>
+            <input class="hide" type="radio" name="tip_amount" id="fifteen_percent" value="15">
+            <label class="dark-bg" for="fifteen_percent">15%</label>
+            <input class="hide" type="radio" name="tip_amount" id="twenty_five_percent" value="25">
+            <label class="dark-bg" for="twenty_five_percent">25%</label>
+            <input class="hide" type="radio" name="tip_amount" id="fifty_percent" value="50">
+            <label class="dark-bg" for="fifty_percent">50%</label>
             <label for="custom_percent">Custom</label>
-            <input type="text" name="tip_amount" id="custom_percent">
+            <input class="hide" type="text" name="tip_amount" id="custom_percent">
           </fieldset>
           <fieldset name="number_of_people">
-            <label form__text-input-label"="" for="number_of_people">Number of People</label>
+            <label for="number_of_people">Number of People</label>
             <input class="js_number_of_people_input" type="text" id="number_of_people" placeholder="0">
           </fieldset>
         </form>
       </section>
-      <section class="container dark-bg">
-        <h2>
-          Tip Amount<span>/ person</span>
-        </h2>
+      <section class="output_section dark-bg">
+        <h2>Tip Amount<span>/ person</span></h2>
         <span class="js_tip_amount_per_person">$0.00</span>
-        <h2>
-          Total<span>/ person</span>
-        </h2>
+        <h2>Total<span>/ person</span></h2>
         <span class="js_total_amount_per_person">$0.00</span>
         <button>Reset</button>
       </section>
