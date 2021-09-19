@@ -8,18 +8,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
-    <link rel="stylesheet" href="/sass.0a7c4b30.css">
+    <link rel="stylesheet" href="/style.e308ff8e.css">
 
     <title>06_29_21_Tip_Calculator</title>
-  <script src="/sass.0a7c4b30.js"></script></head>
+  <script src="/style.e308ff8e.js"></script></head>
   <body>
-    <h1 class="main-heading">Splitter</h1>
-    <div class="container">
-      <section class="input">
-        <form class="input__form">
-          <fieldset name="bill_amount_fieldset" class="input__form__bill-amount">
-            <label class="input__form__text-input-label" for="bill_amount">Bill</label>
-            <input type="text" name="bill_amount" id="bill_amount" class="input__form__text-input js_bill_amount_input">
+    <h1>Splitter</h1>
+    <div class="container center">
+      <section>
+        <form class="stack stack--large">
+          <fieldset name="bill_amount_fieldset">
+            <label for="bill_amount">Bill</label>
+            <input type="text" name="bill_amount" id="bill_amount">
           </fieldset>
           <fieldset name="tip_amount_fieldset">
             <!--
@@ -27,36 +27,36 @@
               Any label with a :checked input preceding it will have a differnt 
               background color to signifiy selection.
             -->
-            <label class="input__form__tip-amount-label" for="tip_amount">Select Tip %</label>
-            <input class="input__form__radio-input" type="radio" name="tip_amount" id="five_percent" value="5">
-            <label class="input__form__radio-input-label" for="five_percent">5%</label>
-            <input class="input__form__radio-input" type="radio" name="tip_amount" id="ten_percent" value="10">
-            <label class="input__form__radio-input-label" for="ten_percent">10%</label>
-            <input class="input__form__radio-input" type="radio" name="tip_amount" id="fifteen_percent" value="15">
+            <label for="tip_amount">Select Tip %</label>
+            <input type="radio" name="tip_amount" id="five_percent" value="5">
+            <label for="five_percent">5%</label>
+            <input type="radio" name="tip_amount" id="ten_percent" value="10">
+            <label for="ten_percent">10%</label>
+            <input type="radio" name="tip_amount" id="fifteen_percent" value="15">
             <label class="input__form__radio-input-label" for="fifteen_percent">15%</label>
             <input class="input__form__radio-input" type="radio" name="tip_amount" id="twenty_five_percent" value="25">
             <label class="input__form__radio-input-label" for="twenty_five_percent">25%</label>
-            <input class="input__form__radio-input" type="radio" name="tip_amount" id="fifty_percent" value="50">
-            <label class="input__form__radio-input-label" for="fifty_percent">50%</label>
+            <input type="radio" name="tip_amount" id="fifty_percent" value="50">
+            <label form__radio-input-label"="" for="fifty_percent">50%</label>
             <label for="custom_percent">Custom</label>
             <input type="text" name="tip_amount" id="custom_percent">
           </fieldset>
           <fieldset name="number_of_people">
-            <label class="input__form__text-input-label" for="number_of_people">Number of People</label>
-            <input class="input__form__text-input js_number_of_people_input" type="text" id="number_of_people" placeholder="0">
+            <label form__text-input-label"="" for="number_of_people">Number of People</label>
+            <input class="js_number_of_people_input" type="text" id="number_of_people" placeholder="0">
           </fieldset>
         </form>
       </section>
-      <section class="output">
-        <h2 class="output__heading">
-          Tip Amount<span class="output__heading__subheading">/ person</span>
+      <section class="container dark-bg">
+        <h2>
+          Tip Amount<span>/ person</span>
         </h2>
-        <span class="output__amount js_tip_amount_per_person">$0.00</span>
-        <h2 class="output__heading">
-          Total<span class="output__heading__subheading">/ person</span>
+        <span class="js_tip_amount_per_person">$0.00</span>
+        <h2>
+          Total<span>/ person</span>
         </h2>
-        <span class="output__amount js_total_amount_per_person">$0.00</span>
-        <button class="output__reset-form">Reset</button>
+        <span class="js_total_amount_per_person">$0.00</span>
+        <button>Reset</button>
       </section>
     </div>
     <script src="/calculator.16600844.js"></script>

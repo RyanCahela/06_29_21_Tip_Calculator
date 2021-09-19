@@ -1,0 +1,77 @@
+:root {
+  /* COLORS */
+  /* Color names */
+  --strong-cyan: hsl(172, 67%, 45%);
+  --very-dark-cyan: hsl(183, 100%, 15%);
+  --very-dark-grayish-cyan: hsl(186, 14%, 43%);
+  --dark-grayish-cyan: hsl(184, 14%, 56%);
+  --light-grayish-cyan: hsl(185, 41%, 84%);
+  --very-light-grayish-cyan: hsl(189, 41%, 97%);
+  --white: hsl(0, 0%, 100%);
+
+  /* Color Intetions */
+  --font-color: var(--very-dark-grayish-cyan);
+  --bg-color: var(--light-grayish-cyan);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Space mono", monospace;
+  color: var(--font-color);
+}
+
+body {
+  background-color: var(--bg-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+label {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* Untility Classes */
+.container {
+  --bg-color: var(--white);
+  background-color: var(--bg-color);
+  padding: 1.5rem;
+}
+
+.dark-bg {
+  --bg-color: var(--very-dark-cyan);
+  color: var(--white);
+}
+
+/* Layout Styles */
+.stack {
+  display: flex;
+  flex-direction: column;
+}
+
+.stack > * + * {
+  --spacing: 1.25rem;
+  margin-top: var(--spacing);
+}
+
+.stack--large {
+  --spacing: 2rem;
+}
+
+.center {
+  max-width: 57.5rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/*# sourceMappingURL=/style.e308ff8e.css.map */
